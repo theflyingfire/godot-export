@@ -54,6 +54,10 @@ inputs:
     default: false
     required: false
 
+outputs:
+  builds:
+    description: The matrix containing build information.
+
 runs:
   using: 'node12'
   main: 'dist/index.js'
