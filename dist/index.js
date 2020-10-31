@@ -2704,7 +2704,13 @@ async function main() {
         Object(core.setFailed)('No valid export presets found, exiting.');
         return 1;
     }
-    Object(core.setOutput)('builds', JSON.stringify(buildResults));
+    const results = buildResults.map(br => {
+        return {
+            directory: br.directory,
+            executablePath: br.executablePath,
+        };
+    });
+    Object(core.setOutput)('builds', JSON.stringify(results));
     // if (ARCHIVE_EXPORT_OUTPUT) {
     //   await zipBuildResults(buildResults);
     // }
