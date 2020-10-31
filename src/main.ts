@@ -15,7 +15,7 @@ async function main(): Promise<number> {
     };
   });
 
-  core.setOutput('builds', JSON.stringify(results));
+  core.setOutput('builds', JSON.stringify({ include: results }));
 
   // if (ARCHIVE_EXPORT_OUTPUT) {
   //   await zipBuildResults(buildResults);

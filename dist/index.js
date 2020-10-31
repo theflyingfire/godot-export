@@ -2710,7 +2710,7 @@ async function main() {
             executablePath: br.executablePath,
         };
     });
-    Object(core.setOutput)('builds', JSON.stringify(results));
+    Object(core.setOutput)('builds', JSON.stringify({ include: results }));
     // if (ARCHIVE_EXPORT_OUTPUT) {
     //   await zipBuildResults(buildResults);
     // }
